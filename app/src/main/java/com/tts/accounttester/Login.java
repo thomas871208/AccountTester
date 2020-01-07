@@ -24,28 +24,31 @@ public class Login extends AppCompatActivity {
         password = intent.getStringExtra("password");
         edaccount = findViewById(R.id.edaccount);
         edpassword = findViewById(R.id.edpassword);
-        checkA = edaccount.getText().toString();
-        checkP = edpassword.getText().toString();
+
     }
     public void fast(View view){
+
         edaccount.setText(account);
         edpassword.setText(password);
         Log.d("hahaha", account);
         Log.d("hahaha", password);
 
     }
-    public  void login(View view){
-        Log.d("hahaha",checkA);
-        Log.d("hahaha",checkP);
-        Log.d("hahaha",account);
-        Log.d("hahaha",password);
- //       if(checkA.equals(account)  && checkP.equals(password)) {
-            Intent intent = new Intent(Login.this, Welcome.class);
-            startActivity(intent);
-            Log.d("hahaha", "hihi");
-  //      }
- //       else {
+    public void check(){
+        checkA = edaccount.getText().toString();
+        checkP = edpassword.getText().toString();
+        if(checkA.equals(account)  && checkP.equals(password)) {
+        Intent intent2 = new Intent(Login.this, Welcome.class);
+        startActivity(intent2);
+        Log.d("hahaha", "hihi");
+         }
+          else {
 
- //       }
+         }
+    }
+    public  void login(View view){
+
+        check();
+
     }
 }
